@@ -6,4 +6,5 @@ import id.bts.userShoppingThymeleaf.domains.User;
 
 public interface UserRepository extends JpaRepository<User, Long> {
 
+	User findByEmailIgnoreCase(String username);
 }

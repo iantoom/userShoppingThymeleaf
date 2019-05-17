@@ -65,4 +65,12 @@ public class ShoppingController {
 		model.addAttribute("shoppings", shoppingService.getAllShopping(1, 2));
 		return "Shopping/ShoppingIndex";
 	}
+	
+	@GetMapping("/{id}/update")
+	public String updateShopping(@PathVariable Long id, Model model) {
+		Shopping shopping = shoppingService.getShoppingById(id);
+		model.addAttribute("shopping", shopping);
+		
+		return "Shopping/ShoppingForm";
+	}
 }

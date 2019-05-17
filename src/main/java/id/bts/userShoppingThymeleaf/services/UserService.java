@@ -7,4 +7,6 @@ import id.bts.userShoppingThymeleaf.domains.User;
 public interface UserService {
 
 	Page<User> getAllUser(int page, int size);
+	
+	User saveUser(User user);
 }
