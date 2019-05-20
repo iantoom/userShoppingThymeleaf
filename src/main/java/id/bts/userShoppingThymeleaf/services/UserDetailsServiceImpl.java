@@ -29,11 +29,14 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 		User user = userRepository.findByEmailIgnoreCase(username);
 
 		log.debug(user.getEmail());
+		log.debug(user.getPassword());
 
 		List<GrantedAuthority> grantList = new ArrayList<GrantedAuthority>();
 
 		GrantedAuthority authority = new SimpleGrantedAuthority("ROLE_USER");
 		grantList.add(authority);
+		
+		
 
 		return new UserDetails(user.getEmail(), user.getPassword(), grantList);
 	}

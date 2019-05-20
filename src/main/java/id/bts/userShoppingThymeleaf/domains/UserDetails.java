@@ -31,16 +31,6 @@ public class UserDetails implements org.springframework.security.core.userdetail
 		return authorities;
 	}
 
-	
-	public void setAuthorities(Collection<? extends GrantedAuthority> authorities) {
-		this.authorities = authorities;
-	}
-	public void setPassword(String password) {
-		this.password = password;
-	}
-	public void setUsername(String username) {
-		this.username = username;
-	}
 	@Override
 	public String getPassword() {
 		
@@ -56,25 +46,25 @@ public class UserDetails implements org.springframework.security.core.userdetail
 	@Override
 	public boolean isAccountNonExpired() {
 		// TODO Auto-generated method stub
-		return false;
+		return true;
 	}
 
 	@Override
 	public boolean isAccountNonLocked() {
 		// TODO Auto-generated method stub
-		return false;
+		return true;
 	}
 
 	@Override
 	public boolean isCredentialsNonExpired() {
 		// TODO Auto-generated method stub
-		return false;
+		return true;
 	}
 
 	@Override
 	public boolean isEnabled() {
 		// TODO Auto-generated method stub
-		return false;
+		return true;
 	}
 
 }
